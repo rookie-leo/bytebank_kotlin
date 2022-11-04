@@ -27,6 +27,52 @@ fun main() {
     saldo -= 250.0
 
     saldoEmContaIf(saldo)
+
+    println()
+    println("Cira conta com FOR")
+    criaContaFor()
+
+    println()
+    println("Cira conta com WHILE")
+    criaContaWhile()
+
+    for (i in 10 downTo 0) {
+        println(i)
+    }
+
+    println()
+
+    for (i in 10 downTo 0 step 2) {
+        println(i)
+    }
+}
+
+fun criaContaWhile() {
+    var i = 0
+    while (i < 5) {
+        val titular = "Kratos $i"
+        val numeroConta = 1000 + i
+        var saldo = 0.0 + i
+
+        println("Titular da conta $titular")
+        println("Número da conta $numeroConta")
+        println("Saldo em conta $saldo")
+        println()
+        i++
+    }
+}
+
+fun criaContaFor() {
+    for (i in 1..5) {
+        val titular = "Kratos $i"
+        val numeroConta = 1000 + i
+        var saldo = 0.0 + i
+
+        println("Titular da conta $titular")
+        println("Número da conta $numeroConta")
+        println("Saldo em conta $saldo")
+        println()
+    }
 }
 
 fun saldoEmContaIf(saldo: Double) {
