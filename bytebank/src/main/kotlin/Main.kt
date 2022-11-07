@@ -12,25 +12,38 @@ fun main() {
     conta2.saldo = 300.00
 
     println("Titular da conta ${conta1.titular}")
-    println("Titular da conta ${conta1.numero}")
-    println("Titular da conta ${conta1.saldo}")
+    println("Numero da conta ${conta1.numero}")
+    println("Saldo da conta ${conta1.saldo}")
 
     println("Titular da conta ${conta2.titular}")
-    println("Titular da conta ${conta2.numero}")
-    println("Titular da conta ${conta2.saldo}")
+    println("Numero da conta ${conta2.numero}")
+    println("Saldo da conta ${conta2.saldo}")
 
-    var conta = conta1
-    println("Titular conta: ${conta.titular}")//Titular conta: Baptista
-    conta.titular = "D.Va"
-    println("Titular conta: ${conta.titular}")//Titular conta: D.Va
-    println("Titular conta1: ${conta1.titular}")//Titular conta: D.Va
+    println("Depositando na conta1")
+    deposita(conta1, 15.00)
+    println("Saldo da conta ${conta1.saldo}")
 
+    println("Depositando na conta2")
+    deposita(conta2, 50.00)
+    println("Saldo da conta ${conta2.saldo}")
+}
+
+fun deposita(conta: Conta, valor: Double) {
+    conta.saldo += valor
 }
 
 class Conta {
     var titular = ""
     var numero = 0
     var saldo = 0.0
+}
+
+private fun testaCopiaEReferencia(conta1: Conta) {
+    var conta = conta1
+    println("Titular conta: ${conta.titular}")//Titular conta: Baptista
+    conta.titular = "D.Va"
+    println("Titular conta: ${conta.titular}")//Titular conta: D.Va
+    println("Titular conta1: ${conta1.titular}")//Titular conta: D.Va
 }
 
 private fun testaCondicionais(saldo: Double, titular: String, numeroConta: Int) {
