@@ -6,18 +6,24 @@ fun main() {
     conta1.numero = 1000
     conta1.saldo = 200.00
 
-    println("Titular da conta ${conta1.titular}")
-    println("Titular da conta ${conta1.numero}")
-    println("Titular da conta ${conta1.saldo}")
-
     val conta2 = Conta()
     conta2.titular = "Mercy"
     conta2.numero = 1001
     conta2.saldo = 300.00
 
+    println("Titular da conta ${conta1.titular}")
+    println("Titular da conta ${conta1.numero}")
+    println("Titular da conta ${conta1.saldo}")
+
     println("Titular da conta ${conta2.titular}")
     println("Titular da conta ${conta2.numero}")
     println("Titular da conta ${conta2.saldo}")
+
+    var conta = conta1
+    println("Titular conta: ${conta.titular}")//Titular conta: Baptista
+    conta.titular = "D.Va"
+    println("Titular conta: ${conta.titular}")//Titular conta: D.Va
+    println("Titular conta1: ${conta1.titular}")//Titular conta: D.Va
 
 }
 
