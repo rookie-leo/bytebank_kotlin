@@ -1,33 +1,55 @@
 fun main() {
     println("Bem vindo ao ByteBank!")
 
-    val titular = "Kratos"
-    val numeroConta = 1000
+    val conta1 = Conta()
+    conta1.titular = "Baptista"
+    conta1.numero = 1000
+    conta1.saldo = 200.00
+
+    println("Titular da conta ${conta1.titular}")
+    println("Titular da conta ${conta1.numero}")
+    println("Titular da conta ${conta1.saldo}")
+
+    val conta2 = Conta()
+    conta2.titular = "Mercy"
+    conta2.numero = 1001
+    conta2.saldo = 300.00
+
+    println("Titular da conta ${conta2.titular}")
+    println("Titular da conta ${conta2.numero}")
+    println("Titular da conta ${conta2.saldo}")
+
+}
+
+class Conta {
+    var titular = ""
+    var numero = 0
     var saldo = 0.0
+}
 
-    println("Titular da conta $titular")
-    println("Número da conta $numeroConta")
-    println("Saldo em conta $saldo")
-
+private fun testaCondicionais(saldo: Double, titular: String, numeroConta: Int) {
+    var saldo1 = saldo
     println("Adicionando valor na conta!")
-    saldo += 250.0
+    saldo1 += 250.0
 
     println("Titular da conta $titular")
     println("Número da conta $numeroConta")
-    println("Saldo em conta $saldo")
+    println("Saldo em conta $saldo1")
 
-    saldoEmContaIf(saldo)
-
-    println("Sacando valor na conta!")
-    saldo -= 250.0
-
-    saldoEmContaWhen(saldo)
+    saldoEmContaIf(saldo1)
 
     println("Sacando valor na conta!")
-    saldo -= 250.0
+    saldo1 -= 250.0
 
-    saldoEmContaIf(saldo)
+    saldoEmContaWhen(saldo1)
 
+    println("Sacando valor na conta!")
+    saldo1 -= 250.0
+
+    saldoEmContaIf(saldo1)
+}
+
+private fun testaLaco() {
     println()
     println("Cira conta com FOR")
     criaContaFor()
@@ -36,6 +58,10 @@ fun main() {
     println("Cira conta com WHILE")
     criaContaWhile()
 
+    testaFor()
+}
+
+private fun testaFor() {
     for (i in 10 downTo 0) {
         println(i)
     }
