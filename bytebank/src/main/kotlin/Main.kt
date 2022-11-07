@@ -26,6 +26,10 @@ fun main() {
     println("Depositando na conta2")
     deposita(conta2, 50.00)
     println("Saldo da conta ${conta2.saldo}")
+
+    println("Sacando da conta1")
+    conta1.saca(100.00)
+    println("Saldo ${conta1.saldo}")
 }
 
 fun deposita(conta: Conta, valor: Double) {
@@ -36,6 +40,10 @@ class Conta {
     var titular = ""
     var numero = 0
     var saldo = 0.0
+
+    fun saca(valor: Double){
+        this.saldo -= valor
+    }
 }
 
 private fun testaCopiaEReferencia(conta1: Conta) {
