@@ -20,20 +20,20 @@ fun main() {
     println("Saldo da conta ${conta2.saldo}")
 
     println("Depositando na conta1")
-    deposita(conta1, 15.00)
+    conta1.deposita(15.00)
     println("Saldo da conta ${conta1.saldo}")
 
     println("Depositando na conta2")
-    deposita(conta2, 50.00)
+    conta2.deposita(50.00)
     println("Saldo da conta ${conta2.saldo}")
 
     println("Sacando da conta1")
     conta1.saca(100.00)
     println("Saldo ${conta1.saldo}")
-}
 
-fun deposita(conta: Conta, valor: Double) {
-    conta.saldo += valor
+    println("Sacando da conta2")
+    conta2.saca(10000.00)
+    println("Saldo ${conta2.saldo}")
 }
 
 class Conta {
@@ -42,7 +42,15 @@ class Conta {
     var saldo = 0.0
 
     fun saca(valor: Double){
-        this.saldo -= valor
+        if (this.saldo >= valor) {
+            this.saldo -= valor
+        } else {
+            println("Saldo insuficiente!")
+        }
+    }
+
+    fun deposita(valor: Double) {
+        this.saldo += valor
     }
 }
 
