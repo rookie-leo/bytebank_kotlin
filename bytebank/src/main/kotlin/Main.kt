@@ -34,6 +34,11 @@ fun main() {
     println("Sacando da conta2")
     conta2.saca(10000.00)
     println("Saldo ${conta2.saldo}")
+
+    println("Tranferindo valor da conta1 para a conta 2")
+    conta1.transfere(conta2, 60.40)
+    println("Saldo conta 1 ${conta1.saldo}")
+    println("Saldo conta 2 ${conta2.saldo}")
 }
 
 class Conta {
@@ -51,6 +56,16 @@ class Conta {
 
     fun deposita(valor: Double) {
         this.saldo += valor
+    }
+
+    fun transfere(conta: Conta, valor: Double) {
+        if ( this.saldo >= valor) {
+            this.saldo -= valor
+            conta.deposita(valor)
+            println("Valor transferido com sucesso!")
+        } else {
+            println("Saldo insuficiente!")
+        }
     }
 }
 
