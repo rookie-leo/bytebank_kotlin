@@ -2,49 +2,69 @@ fun main() {
     println("Bem vindo ao ByteBank!")
 
     val conta1 = Conta()
-    conta1.titular = "Baptista"
-    conta1.numero = 1000
-    conta1.saldo = 200.00
+    conta1.setTitular("Baptista")
+    conta1.setNumero(1000)
+    conta1.deposita(200.00)
 
     val conta2 = Conta()
-    conta2.titular = "Mercy"
-    conta2.numero = 1001
-    conta2.saldo = 300.00
+    conta2.setTitular("Mercy")
+    conta2.setNumero(1001)
+    conta2.deposita(300.00)
 
-    println("Titular da conta ${conta1.titular}")
-    println("Numero da conta ${conta1.numero}")
-    println("Saldo da conta ${conta1.saldo}")
+    println("Titular da conta ${conta1.getTitular()}")
+    println("Numero da conta ${conta1.getNumero()}")
+    println("Saldo da conta ${conta1.getSaldo()}")
 
-    println("Titular da conta ${conta2.titular}")
-    println("Numero da conta ${conta2.numero}")
-    println("Saldo da conta ${conta2.saldo}")
+    println("Titular da conta ${conta2.getTitular()}")
+    println("Numero da conta ${conta2.getNumero()}")
+    println("Saldo da conta ${conta2.getSaldo()}")
 
     println("Depositando na conta1")
     conta1.deposita(15.00)
-    println("Saldo da conta ${conta1.saldo}")
+    println("Saldo da conta ${conta1.getSaldo()}")
 
     println("Depositando na conta2")
     conta2.deposita(50.00)
-    println("Saldo da conta ${conta2.saldo}")
+    println("Saldo da conta ${conta2.getSaldo()}")
 
     println("Sacando da conta1")
     conta1.saca(100.00)
-    println("Saldo ${conta1.saldo}")
+    println("Saldo ${conta1.getSaldo()}")
 
     println("Sacando da conta2")
     conta2.saca(10000.00)
-    println("Saldo ${conta2.saldo}")
+    println("Saldo ${conta2.getSaldo()}")
 
     println("Tranferindo valor da conta1 para a conta 2")
     conta1.transfere(conta2, 60.40)
-    println("Saldo conta 1 ${conta1.saldo}")
-    println("Saldo conta 2 ${conta2.saldo}")
+    println("Saldo conta 1 ${conta1.getSaldo()}")
+    println("Saldo conta 2 ${conta2.getSaldo()}")
 }
 
 class Conta {
-    var titular = ""
-    var numero = 0
-    var saldo = 0.0
+    private var titular = ""
+    private var numero = 0
+    private var saldo = 0.0
+
+    fun getTitular(): String {
+        return this.titular
+    }
+
+    fun setTitular(titular: String) {
+        this.titular = titular
+    }
+
+    fun getNumero(): Int {
+        return this.numero
+    }
+
+    fun setNumero(numero: Int) {
+        this.numero = numero
+    }
+
+    fun getSaldo(): Double {
+        return this.saldo
+    }
 
     fun saca(valor: Double){
         if (this.saldo >= valor) {
@@ -71,10 +91,10 @@ class Conta {
 
 private fun testaCopiaEReferencia(conta1: Conta) {
     var conta = conta1
-    println("Titular conta: ${conta.titular}")//Titular conta: Baptista
-    conta.titular = "D.Va"
-    println("Titular conta: ${conta.titular}")//Titular conta: D.Va
-    println("Titular conta1: ${conta1.titular}")//Titular conta: D.Va
+    println("Titular conta: ${conta.getTitular()}")//Titular conta: Baptista
+    conta.setTitular("D.Va")
+    println("Titular conta: ${conta.getTitular()}")//Titular conta: D.Va
+    println("Titular conta1: ${conta1.getTitular()}")//Titular conta: D.Va
 }
 
 private fun testaCondicionais(saldo: Double, titular: String, numeroConta: Int) {
