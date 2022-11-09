@@ -1,14 +1,10 @@
 fun main() {
     println("Bem vindo ao ByteBank!")
 
-    val conta1 = Conta()
-    conta1.titular = "Baptista"
-    conta1.numero = 1000
+    val conta1 = Conta("Baptista", 1000)
     conta1.deposita(-200.00)
 
-    val conta2 = Conta()
-    conta2.titular = "Mercy"
-    conta2.numero = 1001
+    val conta2 = Conta("Mercy", 1001)
     conta2.deposita(200.00)
 
     println("Titular da conta ${conta1.titular}")
@@ -41,13 +37,14 @@ fun main() {
     println("Saldo conta 2 ${conta2.saldo}")
 }
 
-class Conta {
-    var titular = ""
-    var numero = 0
+class Conta(
+    var titular: String,
+    var numero: Int
+) {
     var saldo = 0.0
         private set
 
-    fun saca(valor: Double){
+    fun saca(valor: Double) {
         if (this.saldo >= valor) {
             this.saldo -= valor
         } else {
@@ -61,7 +58,7 @@ class Conta {
     }
 
     fun transfere(conta: Conta, valor: Double) {
-        if ( this.saldo >= valor) {
+        if (this.saldo >= valor) {
             this.saldo -= valor
             conta.deposita(valor)
             println("Valor transferido com sucesso!")
