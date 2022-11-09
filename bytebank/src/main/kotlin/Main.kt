@@ -1,7 +1,7 @@
 fun main() {
     println("Bem vindo ao ByteBank!")
 
-    val conta1 = Conta("Baptista", 1000)
+    val conta1 = Conta(numero = 1000, titular = "Baptista")
     conta1.deposita(-200.00)
 
     val conta2 = Conta("Mercy", 1001)
@@ -32,7 +32,7 @@ fun main() {
     println("Saldo ${conta2.saldo}")
 
     println("Tranferindo valor da conta1 para a conta 2")
-    conta1.transfere(conta2, 60.40)
+    conta1.transfere(conta = conta2, valor= 60.40)
     println("Saldo conta 1 ${conta1.saldo}")
     println("Saldo conta 2 ${conta2.saldo}")
 }
