@@ -4,7 +4,7 @@ fun main() {
     val conta1 = Conta()
     conta1.titular = "Baptista"
     conta1.numero = 1000
-    conta1.deposita(200.00)
+    conta1.deposita(-200.00)
 
     val conta2 = Conta()
     conta2.titular = "Mercy"
@@ -56,7 +56,8 @@ class Conta {
     }
 
     fun deposita(valor: Double) {
-        this.saldo += valor
+        if (valor > 0) this.saldo += valor
+        else println("Não é possivel depositar valores negativos!")
     }
 
     fun transfere(conta: Conta, valor: Double) {
