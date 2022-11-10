@@ -1,20 +1,19 @@
 package main.kotlin
 
-class Gerente (
+class Gerente(
     nome: String,
     cpf: String,
     val senha: Int
-): Funcionario(
+) : Funcionario(
     nome = nome,
     cpf = cpf
 ) {
     override var salario = 0.0
 
-
-    override fun bonificacao(): Double {
-        salario += salario * 0.2
-        return salario
-    }
+    override val bonificacao: Double
+        get() {
+            return (super.bonificacao * 0.2) + salario
+        }
 
     fun autentica(senha: Int): Boolean {
         return this.senha == senha
