@@ -1,3 +1,4 @@
+import main.kotlin.Diretor
 import main.kotlin.Funcionario
 import main.kotlin.Gerente
 
@@ -20,6 +21,23 @@ fun main() {
     println("Salario com bonificação: ${kora.bonificacao()}")
 
     if(kora.autentica(1234)) {
+        println("Autenticado com sucesso!")
+    } else {
+        println("Falha na autenticação!")
+    }
+
+    println()
+
+    val naruto = Diretor("Naruto", "45678932145", 1172, 200.00)
+    naruto.salario = 1000.00
+    println("Diretor: ${naruto.nome}")
+    println("CPF: ${naruto.cpf}")
+    println("Salario: ${naruto.salario}")
+    println("Salario com bonificação: ${naruto.bonificacao()}")
+    println("Participação de lucro rotativo: ${naruto.plr}")
+    println("Salario mais plr e bonicação ${naruto.salario + naruto.plr}")
+
+    if(naruto.autentica(1172)) {
         println("Autenticado com sucesso!")
     } else {
         println("Falha na autenticação!")
