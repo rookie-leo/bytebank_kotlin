@@ -2,64 +2,37 @@ import main.kotlin.*
 
 fun main() {
 
-    val kakashi = Funcionario("Kakashi", "01234567885")
-    kakashi.salario = 1000.00
-    println("Funcionário: ${kakashi.nome}")
-    println("CPF: ${kakashi.cpf}")
-    println("Salario: ${kakashi.salario}")
-    println("Salario com bonificação: ${kakashi.bonificacao}")
+    println("Bem vindo ao Bytebank")
 
-    println()
+    val contaCorrente = ContaCorrente(
+        titular = "Naruto",
+        numero = 1000
+    )
+    val contaPoupanca = ContaPoupanca(
+        titular = "Hinata",
+        numero = 1001
+    )
 
-    val hinata = Gerente("Hinata", "98765432105", 1234)
-    hinata.salario = 2000.00
-    println("Gerente: ${hinata.nome}")
-    println("CPF: ${hinata.cpf}")
-    println("Salario: ${hinata.salario}")
-    println("Salario com bonificação: ${hinata.bonificacao}")
+    contaCorrente.deposita(1000.0)
+    contaPoupanca.deposita(1000.0)
 
-    if(hinata.autentica(1234)) {
-        println("Autenticado com sucesso!")
-    } else {
-        println("Falha na autenticação!")
-    }
+    println("saldo corrente: ${contaCorrente.saldo}")
+    println("saldo poupança: ${contaPoupanca.saldo}")
 
-    println()
+    contaCorrente.saca(100.0)
+    contaPoupanca.saca(100.0)
 
-    val naruto = Diretor("Naruto", "45678932145", 1172, 200.00)
-    naruto.salario = 2500.00
-    naruto.plr = 200.00
-    println("Diretor: ${naruto.nome}")
-    println("CPF: ${naruto.cpf}")
-    println("Salario: ${naruto.salario}")
-    println("Participação de lucro rotativo: ${naruto.plr}")
-    println("Salario com bonificação: ${naruto.bonificacao}")
+    println("saldo após saque corrente: ${contaCorrente.saldo}")
+    println("saldo após saque poupança: ${contaPoupanca.saldo}")
 
-    if(naruto.autentica(1172)) {
-        println("Autenticado com sucesso!")
-    } else {
-        println("Falha na autenticação!")
-    }
+    contaCorrente.transfere(contaPoupanca, 100.0)
 
-    println()
+    println("saldo corrente após tranferir para poupança: ${contaCorrente.saldo}")
+    println("saldo poupança após receber transferência: ${contaPoupanca.saldo}")
 
-    val sakura = Analista(nome = "Sasuke", cpf = "78965413285")
-    sakura.salario = 2100.50
-    println("Analista: ${sakura.nome}")
-    println("CPF: ${sakura.cpf}")
-    println("Salario: ${sakura.salario}")
-    println("Salario com bonificação: ${sakura.bonificacao}")
+    contaPoupanca.transfere(contaCorrente, 200.0)
 
-    println()
-
-    val calculadora = CalculadoraBonificacao()
-
-    println()
-
-    calculadora.registra(kakashi)
-    calculadora.registra(hinata)
-    calculadora.registra(naruto)
-
-    println("Total de bonificações: ${calculadora.total}")
+    println("saldo poupança após tranferir para corrente: ${contaPoupanca.saldo}")
+    println("saldo corrente após receber transferência: ${contaCorrente.saldo}")
 
 }
