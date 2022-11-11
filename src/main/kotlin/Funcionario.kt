@@ -6,6 +6,6 @@ open class Funcionario(
 ) {
     open var salario = 0.0
 
-    open val bonificacao: Double get() = salario * 0.1
+    open val bonificacao: Double get() = (salario * 0.1) + salario
 
 }
