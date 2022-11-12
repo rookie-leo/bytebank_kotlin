@@ -1,11 +1,11 @@
 package main.kotlin
 
-open class Funcionario(
+abstract class Funcionario(
     var nome: String,
     val cpf: String
 ) {
-    open var salario = 0.0
+    abstract var salario: Double
 
-    open val bonificacao: Double get() = (salario * 0.1) + salario
+    abstract val bonificacao: Double
 
 }

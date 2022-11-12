@@ -1,18 +1,13 @@
 package main.kotlin
 
-open class Conta(
+abstract class Conta(
     var titular: String,
     var numero: Int
 ) {
     open var saldo = 0.0
+        protected set
 
-   open fun saca(valor: Double) {
-        if (this.saldo >= valor) {
-            this.saldo -= valor
-        } else {
-            println("Saldo insuficiente!")
-        }
-    }
+   abstract fun saca(valor: Double)
 
     open fun deposita(valor: Double) {
         if (valor > 0) this.saldo += valor

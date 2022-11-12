@@ -2,9 +2,9 @@ package main.kotlin
 
 fun testaFunciorario() {
 
-    val kakashi = Funcionario("Kakashi", "01234567885")
+    val kakashi = Analista("Kakashi", "01234567885")
     kakashi.salario = 1000.00
-    println("Funcionário: ${kakashi.nome}")
+    println("Analista: ${kakashi.nome}")
     println("CPF: ${kakashi.cpf}")
     println("Salario: ${kakashi.salario}")
     println("Salario com bonificação: ${kakashi.bonificacao}")
