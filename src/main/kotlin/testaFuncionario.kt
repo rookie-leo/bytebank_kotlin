@@ -57,4 +57,16 @@ fun testaFunciorario() {
 
     println("Total de bonificações: ${calculadora.total}")
 
+    println()
+    println("Clientes")
+    val cliente = Cliente("Tazuna", "75395146825", 7685)
+    println("Cliente: ${cliente.nome}")
+    println("CPF: ${cliente.cpf}")
+    println("Cliente autenticado? ${cliente.autentica(7685)}")
+
+    val sistema = SistemaInterno()
+    sistema.entra(hinata, 1000)
+    sistema.entra(naruto, 2000)
+    sistema.entra(cliente, 1234)
+
 }

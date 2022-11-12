@@ -9,11 +9,11 @@ abstract class FuncionarioAdmin(
     nome = nome,
     cpf = cpf,
     salario = salario
-) {
+), Autenticavel {
 
     abstract override val bonificacao: Double
 
-    fun autentica(senha: Int): Boolean{
+    override fun autentica(senha: Int): Boolean{
         if(this.senha == senha) {
             return true
         }
