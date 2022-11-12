@@ -2,13 +2,13 @@ package main.kotlin
 
 class Analista(
     nome: String,
-    cpf: String
+    cpf: String,
+    salario: Double
 ) : Funcionario(
     nome = nome,
-    cpf = cpf
+    cpf = cpf,
+    salario = salario
 ) {
-    override var salario = 0.0
-
     override val bonificacao: Double
         get() {
             salario += salario * 0.2

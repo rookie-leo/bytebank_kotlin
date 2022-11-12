@@ -3,20 +3,17 @@ package main.kotlin
 class Gerente(
     nome: String,
     cpf: String,
-    val senha: Int
-) : Funcionario(
+    senha: Int,
+    salario: Double
+) : FuncionarioAdmin(
     nome = nome,
-    cpf = cpf
+    cpf = cpf,
+    senha = senha,
+    salario = salario
 ) {
-    override var salario = 0.0
-
     override val bonificacao: Double
         get() {
             salario += salario * 0.2
             return salario
         }
-
-    fun autentica(senha: Int): Boolean {
-        return this.senha == senha
-    }
 }
