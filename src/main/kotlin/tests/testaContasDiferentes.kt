@@ -1,5 +1,8 @@
 package main.kotlin
 
+import main.kotlin.models.ContaCorrente
+import main.kotlin.models.ContaPoupanca
+
 fun testaContasDiferentes() {
     val contaCorrente = ContaCorrente(
         titular = "Naruto",

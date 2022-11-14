@@ -1,17 +1,20 @@
-package main.kotlin
+package main.kotlin.models
 
-class Analista(
+class Diretor(
     nome: String,
     cpf: String,
-    salario: Double
-) : Funcionario(
+    senha: Int,
+    salario: Double,
+    var plr: Double
+) : FuncionarioAdmin(
     nome = nome,
     cpf = cpf,
+    senha = senha,
     salario = salario
 ) {
     override val bonificacao: Double
         get() {
-            salario += salario * 0.2
+            salario += plr + (salario * 0.3)
             return salario
         }
 }

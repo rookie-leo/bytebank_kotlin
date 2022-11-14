@@ -1,4 +1,7 @@
-package main.kotlin
+package main.kotlin.models
+
+import main.kotlin.models.Autenticavel
+import main.kotlin.models.Funcionario
 
 abstract class FuncionarioAdmin(
     nome: String,

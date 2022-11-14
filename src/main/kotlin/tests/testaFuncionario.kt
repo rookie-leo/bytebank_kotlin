@@ -1,5 +1,7 @@
 package main.kotlin
 
+import main.kotlin.models.*
+
 fun testaFunciorario() {
 
     val kakashi = Analista("Kakashi", "01234567885", 1000.00)

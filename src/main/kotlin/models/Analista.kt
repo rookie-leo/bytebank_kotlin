@@ -1,14 +1,12 @@
-package main.kotlin
+package main.kotlin.models
 
-class Gerente(
+class Analista(
     nome: String,
     cpf: String,
-    senha: Int,
     salario: Double
-) : FuncionarioAdmin(
+) : Funcionario(
     nome = nome,
     cpf = cpf,
-    senha = senha,
     salario = salario
 ) {
     override val bonificacao: Double

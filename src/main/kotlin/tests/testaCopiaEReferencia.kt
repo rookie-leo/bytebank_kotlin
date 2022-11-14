@@ -1,5 +1,7 @@
 package main.kotlin
 
+import main.kotlin.models.Conta
+
 fun testaCopiaEReferencia(conta1: Conta) {
     var conta = conta1
 

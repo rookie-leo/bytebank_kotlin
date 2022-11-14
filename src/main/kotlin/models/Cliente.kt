@@ -1,4 +1,6 @@
-package main.kotlin
+package main.kotlin.models
+
+import main.kotlin.models.Autenticavel
 
 class Cliente(
     val nome: String,

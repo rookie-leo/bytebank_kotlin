@@ -1,4 +1,6 @@
-package main.kotlin
+package main.kotlin.models
+
+import main.kotlin.models.Conta
 
 class ContaPoupanca(
     titular: String,

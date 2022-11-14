@@ -1,4 +1,4 @@
-package main.kotlin
+package main.kotlin.models
 
 abstract class Conta(
     var titular: String,
