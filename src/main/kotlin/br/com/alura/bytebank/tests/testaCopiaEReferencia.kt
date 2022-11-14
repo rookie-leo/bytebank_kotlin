@@ -1,6 +1,6 @@
 package main.kotlin
 
-import main.kotlin.models.Conta
+import main.kotlin.br.com.alura.bytebank.models.Conta
 
 fun testaCopiaEReferencia(conta1: Conta) {
     var conta = conta1

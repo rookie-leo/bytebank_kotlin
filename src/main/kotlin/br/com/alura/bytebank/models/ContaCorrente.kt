@@ -1,6 +1,4 @@
-package main.kotlin.models
-
-import main.kotlin.models.Conta
+package main.kotlin.br.com.alura.bytebank.models
 
 class ContaCorrente(
     titular: String,

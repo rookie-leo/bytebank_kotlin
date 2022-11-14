@@ -1,6 +1,6 @@
 package main.kotlin
 
-import main.kotlin.models.*
+import main.kotlin.br.com.alura.bytebank.models.*
 
 fun testaFunciorario() {
 

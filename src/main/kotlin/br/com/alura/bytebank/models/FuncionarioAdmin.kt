@@ -1,7 +1,4 @@
-package main.kotlin.models
-
-import main.kotlin.models.Autenticavel
-import main.kotlin.models.Funcionario
+package main.kotlin.br.com.alura.bytebank.models
 
 abstract class FuncionarioAdmin(
     nome: String,

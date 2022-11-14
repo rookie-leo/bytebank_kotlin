@@ -1,7 +1,7 @@
 package main.kotlin
 
-import main.kotlin.models.ContaCorrente
-import main.kotlin.models.ContaPoupanca
+import main.kotlin.br.com.alura.bytebank.models.ContaCorrente
+import main.kotlin.br.com.alura.bytebank.models.ContaPoupanca
 
 fun testaContasDiferentes() {
     val contaCorrente = ContaCorrente(

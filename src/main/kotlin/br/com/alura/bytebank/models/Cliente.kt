@@ -1,6 +1,4 @@
-package main.kotlin.models
-
-import main.kotlin.models.Autenticavel
+package main.kotlin.br.com.alura.bytebank.models
 
 class Cliente(
     val nome: String,

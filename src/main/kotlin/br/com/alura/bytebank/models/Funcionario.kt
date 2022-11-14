@@ -1,4 +1,4 @@
-package main.kotlin.models
+package main.kotlin.br.com.alura.bytebank.models
 
 abstract class Funcionario(
     var nome: String,
