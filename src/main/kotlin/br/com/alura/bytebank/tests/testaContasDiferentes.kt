@@ -3,10 +3,11 @@ package main.kotlin
 import main.kotlin.br.com.alura.bytebank.models.Cliente
 import main.kotlin.br.com.alura.bytebank.models.ContaCorrente
 import main.kotlin.br.com.alura.bytebank.models.ContaPoupanca
+import main.kotlin.br.com.alura.bytebank.models.Endereco
 
 fun testaContasDiferentes() {
     val contaCorrente = ContaCorrente(
-        titular = Cliente("Naruto", "", 7),
+        titular = Cliente("Naruto", "", 7, Endereco(logradouro = "Rua do Limoeiro")),
         numero = 1000
     )
     val contaPoupanca = ContaPoupanca(
