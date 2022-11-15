@@ -4,7 +4,7 @@ fun main() {
 
     println("Bem vindo ao Bytebank")
 
-    testaFunciorario()
+//    testaFunciorario()
 
-//    testaContasDiferentes()
+    testaContasDiferentes()
 }

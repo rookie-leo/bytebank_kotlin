@@ -1,7 +1,7 @@
 package main.kotlin.br.com.alura.bytebank.models
 
 class ContaPoupanca(
-    titular: String,
+    titular: Cliente,
     numero: Int
 ): Conta(
     titular,

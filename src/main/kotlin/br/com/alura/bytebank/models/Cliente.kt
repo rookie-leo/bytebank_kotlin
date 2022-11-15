@@ -1,7 +1,7 @@
 package main.kotlin.br.com.alura.bytebank.models
 
 class Cliente(
-    val nome: String,
+    var nome: String,
     val cpf: String,
     val senha: Int
 ) : Autenticavel {
