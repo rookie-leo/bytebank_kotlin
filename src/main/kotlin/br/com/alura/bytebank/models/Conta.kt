@@ -1,11 +1,18 @@
 package main.kotlin.br.com.alura.bytebank.models
 
+var totalContas = 0
+
 abstract class Conta(
     var titular: Cliente,
     var numero: Int
 ) {
     open var saldo = 0.0
         protected set
+
+    init {
+        println("Criando conta")
+        totalContas++
+    }
 
    abstract fun saca(valor: Double)
 
