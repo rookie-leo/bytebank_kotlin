@@ -1,15 +1,5 @@
 package main.kotlin.br.com.alura.bytebank.models
 
-/*
-* logradouro;
-número;
-bairro;
-cidade;
-estado;
-cep;
-complemento.
-* */
-
 class Endereco(
     var logradouro: String = "",
     var numero: Int = 0,
@@ -18,4 +8,16 @@ class Endereco(
     var estado: String = "",
     var cep: String = "",
     var complemento: String = ""
-)
+) {
+    override fun toString(): String {
+        return """Endereco {
+            logradouro: '$logradouro',
+             numero: $numero,
+             bairro: '$bairro',
+             cidade: '$cidade',
+             estado: '$estado',
+             cep:'$cep',
+             complemento: '$complemento'
+        }""".trimMargin()
+    }
+}
