@@ -1,5 +1,7 @@
 package main.kotlin.br.com.alura.bytebank.models
 
+import main.kotlin.br.com.alura.bytebank.exceptions.SaldoInsuficienteException
+
 
 abstract class Conta(
     var titular: Cliente,
@@ -32,7 +34,7 @@ abstract class Conta(
             conta.deposita(valor)
             println("Valor transferido com sucesso!")
         } else {
-            println("Saldo insuficiente!")
+            throw SaldoInsuficienteException()
         }
     }
 }

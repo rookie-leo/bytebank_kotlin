@@ -1,5 +1,7 @@
 package main.kotlin.br.com.alura.bytebank.models
 
+import main.kotlin.br.com.alura.bytebank.exceptions.SaldoInsuficienteException
+
 class ContaPoupanca(
     titular: Cliente,
     numero: Int
@@ -12,7 +14,7 @@ class ContaPoupanca(
         if (this.saldo >= valor) {
             this.saldo -= valor
         } else {
-            println("Saldo insuficiente!")
+            throw SaldoInsuficienteException()
         }
     }
 }
