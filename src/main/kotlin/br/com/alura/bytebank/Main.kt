@@ -7,22 +7,6 @@ fun main() {
 
     println("início main")
 
-    val entrada: String = "1.a"
-
-    val valorRecebido: Double? = try {
-        entrada.toDouble()
-    } catch (ex: NumberFormatException) {
-        println("Houve um problema na conversão do valor digitado")
-        ex.printStackTrace()
-        null
-    }
-
-    val valorComTaxa: Double? = if (valorRecebido != null) {
-        valorRecebido + 0.1
-    } else {
-        null
-    }
-
 
 
     funcao1()
@@ -39,6 +23,8 @@ fun funcao2() {
     println("início funcao2")
     for (i in 1..5){
         println(i)
+        val endereco = Any()
+        throw ArithmeticException()
     }
     println("fim funcao2")
 }
