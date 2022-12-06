@@ -1,5 +1,6 @@
 package main.kotlin
 
+import main.kotlin.br.com.alura.bytebank.exceptions.SaldoInsuficienteException
 import main.kotlin.br.com.alura.bytebank.models.Cliente
 import main.kotlin.br.com.alura.bytebank.models.ContaCorrente
 import main.kotlin.br.com.alura.bytebank.models.ContaPoupanca
@@ -21,8 +22,13 @@ fun testaContasDiferentes() {
     println("saldo corrente: ${contaCorrente.saldo}")
     println("saldo poupança: ${contaPoupanca.saldo}")
 
-    contaCorrente.saca(100.0)
-    contaPoupanca.saca(100.0)
+    try {
+        contaCorrente.saca(2000.0)
+        contaPoupanca.saca(100.0)
+    } catch (e: SaldoInsuficienteException) {
+        println("Falha ao sacar valor solicitado")
+        e.printStackTrace()
+    }
 
     println("saldo após saque corrente: ${contaCorrente.saldo}")
     println("saldo após saque poupança: ${contaPoupanca.saldo}")

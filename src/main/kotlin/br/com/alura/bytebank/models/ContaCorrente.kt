@@ -1,5 +1,7 @@
 package main.kotlin.br.com.alura.bytebank.models
 
+import main.kotlin.br.com.alura.bytebank.exceptions.SaldoInsuficienteException
+
 class ContaCorrente(
     titular: Cliente,
     numero: Int
@@ -13,7 +15,7 @@ class ContaCorrente(
         if (this.saldo >= valorComTaxa) {
             this.saldo -= valorComTaxa
         } else {
-            println("Saldo insuficiente!")
+            throw SaldoInsuficienteException()
         }
     }
 

@@ -1,4 +1,5 @@
 import main.kotlin.*
+import main.kotlin.br.com.alura.bytebank.exceptions.SaldoInsuficienteException
 import main.kotlin.br.com.alura.bytebank.models.*
 import main.kotlin.br.com.alura.bytebank.tests.testaEndereco
 import main.kotlin.br.com.alura.bytebank.tests.testaObjeto
@@ -7,9 +8,8 @@ fun main() {
 
     println("início main")
 
+    testaContasDiferentes()
 
-
-    funcao1()
     println("fim main")
 }
 
@@ -24,7 +24,7 @@ fun funcao2() {
     for (i in 1..5){
         println(i)
         val endereco = Any()
-        throw ArithmeticException()
+        throw SaldoInsuficienteException()
     }
     println("fim funcao2")
 }
