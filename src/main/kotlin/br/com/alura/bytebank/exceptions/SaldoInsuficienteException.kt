@@ -1,3 +1,3 @@
 package main.kotlin.br.com.alura.bytebank.exceptions
 
-class SaldoInsuficienteException: Exception("Saldo em conta insuficiente!")
+class SaldoInsuficienteException(mensagem: String = "Saldo em conta insuficiente!") : Exception(mensagem)

@@ -1,5 +1,6 @@
-package main.kotlin
+package main.kotlin.br.com.alura.bytebank.tests
 
+import main.kotlin.br.com.alura.bytebank.exceptions.FalhaAutenticacaoException
 import main.kotlin.br.com.alura.bytebank.exceptions.SaldoInsuficienteException
 import main.kotlin.br.com.alura.bytebank.models.Cliente
 import main.kotlin.br.com.alura.bytebank.models.ContaCorrente
@@ -23,7 +24,7 @@ fun testaContasDiferentes() {
     println("saldo poupança: ${contaPoupanca.saldo}")
 
     try {
-        contaCorrente.saca(2000.0)
+        contaCorrente.saca(100.0)
         contaPoupanca.saca(100.0)
     } catch (e: SaldoInsuficienteException) {
         println("Falha ao sacar valor solicitado")
@@ -33,12 +34,24 @@ fun testaContasDiferentes() {
     println("saldo após saque corrente: ${contaCorrente.saldo}")
     println("saldo após saque poupança: ${contaPoupanca.saldo}")
 
-    contaCorrente.transfere(contaPoupanca, 100.0)
+    val valor = 100.0
+    try {
+        contaCorrente.transfere(contaPoupanca, valor, 7)
+    } catch (e: SaldoInsuficienteException) {
+        println("Falha ao sacar valor solicitado! Saldo em conta: ${contaCorrente.saldo}. Valor solicitado: $valor")
+        e.printStackTrace()
+    } catch (e: FalhaAutenticacaoException) {
+        e.printStackTrace()
+    }
 
     println("saldo corrente após tranferir para poupança: ${contaCorrente.saldo}")
     println("saldo poupança após receber transferência: ${contaPoupanca.saldo}")
 
-    contaPoupanca.transfere(contaCorrente, 200.0)
+    try {
+        contaPoupanca.transfere(contaCorrente, 200.0, 7)
+    } catch (e: FalhaAutenticacaoException) {
+        e.printStackTrace()
+    }
 
     println("saldo poupança após tranferir para corrente: ${contaPoupanca.saldo}")
     println("saldo corrente após receber transferência: ${contaCorrente.saldo}")

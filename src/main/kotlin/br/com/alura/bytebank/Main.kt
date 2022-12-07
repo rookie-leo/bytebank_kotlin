@@ -1,8 +1,5 @@
-import main.kotlin.*
 import main.kotlin.br.com.alura.bytebank.exceptions.SaldoInsuficienteException
-import main.kotlin.br.com.alura.bytebank.models.*
-import main.kotlin.br.com.alura.bytebank.tests.testaEndereco
-import main.kotlin.br.com.alura.bytebank.tests.testaObjeto
+import main.kotlin.br.com.alura.bytebank.tests.testaContasDiferentes
 
 fun main() {
 

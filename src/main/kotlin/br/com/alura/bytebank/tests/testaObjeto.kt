@@ -1,7 +1,6 @@
 package main.kotlin.br.com.alura.bytebank.tests
 
 import main.kotlin.br.com.alura.bytebank.models.*
-import main.kotlin.testaContasDiferentes
 
 fun testaObjeto() {
     val objetoAnonimo = object : Autenticavel {
