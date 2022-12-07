@@ -37,22 +37,19 @@ fun testaContasDiferentes() {
     val valor = 100.0
     try {
         contaCorrente.transfere(contaPoupanca, valor, 7)
+        println("saldo corrente após tranferir para poupança: ${contaCorrente.saldo}")
+        println("saldo poupança após receber transferência: ${contaPoupanca.saldo}")
+
+        contaPoupanca.transfere(contaCorrente, 200.0, 7)
+        println("saldo poupança após tranferir para corrente: ${contaPoupanca.saldo}")
+        println("saldo corrente após receber transferência: ${contaCorrente.saldo}")
     } catch (e: SaldoInsuficienteException) {
         println("Falha ao sacar valor solicitado! Saldo em conta: ${contaCorrente.saldo}. Valor solicitado: $valor")
         e.printStackTrace()
     } catch (e: FalhaAutenticacaoException) {
         e.printStackTrace()
+    } catch (ex: Exception) {
+        println("Ocorreu uma Exception inesperada!")
+        ex.printStackTrace()
     }
-
-    println("saldo corrente após tranferir para poupança: ${contaCorrente.saldo}")
-    println("saldo poupança após receber transferência: ${contaPoupanca.saldo}")
-
-    try {
-        contaPoupanca.transfere(contaCorrente, 200.0, 7)
-    } catch (e: FalhaAutenticacaoException) {
-        e.printStackTrace()
-    }
-
-    println("saldo poupança após tranferir para corrente: ${contaPoupanca.saldo}")
-    println("saldo corrente após receber transferência: ${contaCorrente.saldo}")
 }
