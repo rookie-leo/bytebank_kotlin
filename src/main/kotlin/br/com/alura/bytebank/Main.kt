@@ -10,5 +10,21 @@ fun main() {
     possuiAmbasContas.add("Naminé")
 
     println(possuiAmbasContas)
+    println()
+
+    println(possuiContaCorrente + possuiContaPoupanca)
+    println(possuiContaCorrente union possuiContaPoupanca)
+
+    println(possuiContaCorrente - possuiContaPoupanca)
+    println(possuiContaCorrente subtract possuiContaPoupanca)
+
+    println(possuiContaCorrente intersect possuiContaPoupanca)
+
+    println()
+
+    val possuiContaList = possuiAmbasContas.toMutableList()
+    possuiContaList.add("Sora")
+    println(possuiContaList)
+    println(possuiContaList.toSet())
 }
 
