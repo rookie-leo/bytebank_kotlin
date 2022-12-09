@@ -1,14 +1,9 @@
-import main.kotlin.br.com.alura.bytebank.models.BancoDeNomes
-import main.kotlin.br.com.alura.bytebank.models.Cliente
-
 fun main() {
-    val banco = BancoDeNomes()
-    val nomesSalvos = banco.nomes
-    val cliente = Cliente("Tazuna", "75395146825", 7685)
+    val possuiContaCorrente = listOf("Mickey", "Sora", "Kairi", "Riku", "Donald", "Pateta")
+    val possuiContaPoupanca = listOf("Mickey", "Riku", "Donald")
+    val possuiAmbasContas = possuiContaCorrente + possuiContaPoupanca
 
-
-    banco.salva(cliente.nome)
-    println(banco.nomes)
-    println(nomesSalvos)
-    println(BancoDeNomes().nomes)
+    println(possuiAmbasContas)
+    println(possuiAmbasContas.distinct())
 }
+
