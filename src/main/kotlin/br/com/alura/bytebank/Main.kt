@@ -1,20 +1,11 @@
-import main.kotlin.br.com.alura.bytebank.models.Endereco
+import main.kotlin.br.com.alura.bytebank.models.BancoDeNomes
+import main.kotlin.br.com.alura.bytebank.models.Cliente
 
 fun main() {
-    val endereco: Endereco? = Endereco(logradouro = "rua dos bobos", complemento = "casa")
-    val logradouroNovo: String? = endereco?.logradouro
+    val banco = BancoDeNomes()
+    val cliente = Cliente("Tazuna", "75395146825", 7685)
 
-    endereco?.let {
-        println(it.logradouro?.length)
-        val tamanhoComplemento = it.complemento?.length ?: throw IllegalStateException("Complemento não pode ser nulo!")
-        println(tamanhoComplemento)
-    }
-
-    safeCast(1)
-    safeCast("")
-}
-
-fun safeCast(valor: Any) {
-    val numero: Int? = valor as? Int
-    println(numero)
+    banco.salva(cliente.nome)
+    println(banco.nomes)
+    println(BancoDeNomes().nomes)
 }
