@@ -1,7 +1,7 @@
 package main.kotlin.br.com.alura.bytebank.models
 
 class BancoDeNomes {
-    val nomes: Collection<String> get() = dados
+    val nomes: Collection<String> get() = dados.toList()
 
     companion object {
         private val dados = mutableListOf<String>()
