@@ -1,30 +1,22 @@
+import main.kotlin.br.com.alura.bytebank.tests.collections.testaSet
+
 fun main() {
-    val possuiContaCorrente: Set<String> = setOf("Mickey", "Sora", "Kairi", "Riku", "Donald", "Pateta")
-    val possuiContaPoupanca: Set<String> = setOf("Mickey", "Riku", "Donald")
-    val possuiAmbasContas = mutableSetOf<String>()
+    val pedidos = mapOf(Pair(1, 20.0), Pair(2, 50.50), 3 to 35.99)
+    println(pedidos)
 
-    possuiAmbasContas.addAll(possuiContaCorrente)
-    possuiAmbasContas.addAll(possuiContaPoupanca)
+    val pedido = pedidos[2]
 
-    possuiAmbasContas.add("Naminé")
-    possuiAmbasContas.add("Naminé")
+    pedido?.let {
+        println("Pedido $it")
+    }
 
-    println(possuiAmbasContas)
-    println()
+    var total = 0.0
+    for (pedido: Map.Entry<Int, Double> in pedidos) {
+        println("Numero do pedido ${pedido.key}")
+        println("Valor do pedido ${pedido.value}")
+        total += pedido.value
+    }
 
-    println(possuiContaCorrente + possuiContaPoupanca)
-    println(possuiContaCorrente union possuiContaPoupanca)
-
-    println(possuiContaCorrente - possuiContaPoupanca)
-    println(possuiContaCorrente subtract possuiContaPoupanca)
-
-    println(possuiContaCorrente intersect possuiContaPoupanca)
-
-    println()
-
-    val possuiContaList = possuiAmbasContas.toMutableList()
-    possuiContaList.add("Sora")
-    println(possuiContaList)
-    println(possuiContaList.toSet())
+    println("Valor total R$ $total")
 }
 
