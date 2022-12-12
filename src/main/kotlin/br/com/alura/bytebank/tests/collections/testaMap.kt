@@ -5,8 +5,8 @@ fun testaMap() {
         Pair(1, 20.0),
         Pair(2, 50.50),
         3 to 35.99,
-        4 to 300.00,
-        5 to 5.55,
+        4 to 100.00,
+        5 to 100.00,
         6 to 20.00
     )
     println(pedidos.getOrElse(5) {
@@ -35,9 +35,31 @@ fun testaMap() {
     println(pedidos.filterKeys { numero ->
         numero % 2 == 1
     })
+
+    println(pedidos + mapOf(7 to 90.0, 8 to 20.0))
+    println(pedidos)
+
+    println(pedidos - listOf(6, 5))
+    println(pedidos)
+
+//    pedidos.putAll(listOf<Pair<Int,Double>>(7 to 90.0, 8 to 20.0, 8 to 30.0))
+    pedidos += listOf<Pair<Int,Double>>(7 to 90.0, 8 to 20.0, 8 to 30.0)
+    println(pedidos)
+
+    pedidos.keys.remove(1)
+    println(pedidos)
+
+    pedidos.values.remove(50.0)
+    println(pedidos)
+
+    pedidos.values.remove(100.0)
+    println(pedidos)
+
+    pedidos -= 6
+    println(pedidos)
 }
 
-public fun funcoesBasicas(pedidos: MutableMap<Int, Double>) {
+fun funcoesBasicas(pedidos: MutableMap<Int, Double>) {
     val pedido = pedidos[2]
 
     pedido?.let {
