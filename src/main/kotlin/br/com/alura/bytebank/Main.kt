@@ -1,6 +1,6 @@
-import main.kotlin.br.com.alura.bytebank.tests.collections.testaMap
+import main.kotlin.br.com.alura.bytebank.tests.collections.testaAssociacaoEAgrupamento
 
 fun main() {
-    testaMap()
+    testaAssociacaoEAgrupamento()
 }
 
