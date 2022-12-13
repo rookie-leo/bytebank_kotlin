@@ -1,6 +1,15 @@
-import main.kotlin.br.com.alura.bytebank.tests.collections.testaAssociacaoEAgrupamento
-
 fun main() {
-    testaAssociacaoEAgrupamento()
+    val minhaFuncao = :: teste
+    println(minhaFuncao())
+
+    val minhaFuncaoClasse: () -> Unit = Teste()
+    println(minhaFuncaoClasse())
 }
 
+fun teste() { println("Executa função teste") }
+
+class Teste : () -> Unit {
+    override fun invoke() {
+        println("Executa invoke da classe Teste")
+    }
+}
