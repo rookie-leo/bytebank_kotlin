@@ -18,10 +18,10 @@ class Soma : (Int, Int) -> Int {
     }
 }
 
-val minhaFuncaoLambda = {
-    println("Executa função lambda")
+val minhaFuncaoLambda = { a: Int, b: Int ->
+    a + b
 }
 
-val minhaFuncaoAnonima: () -> Unit = fun() {
-    println("Executa função anonima")
+val minhaFuncaoAnonima = fun(a: Int, b: Int): Int {
+    return a + b
 }
