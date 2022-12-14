@@ -1,13 +1,9 @@
+import main.kotlin.br.com.alura.bytebank.tests.testaTipoFuncaoClasse
+import main.kotlin.br.com.alura.bytebank.tests.testaTipoFuncaoReferencia
+
 fun main() {
-    val minhaFuncaoLambda = {
-        println("Executa função lambda")
-    }
+    testaTipoFuncaoReferencia()
+    testaTipoFuncaoClasse()
 
-    val minhaFuncaoAnonima: () -> Unit = fun() {
-        println("Executa função anonima")
-    }
-
-    minhaFuncaoLambda()
-    minhaFuncaoAnonima()
 }
 
