@@ -1,22 +1,16 @@
+import main.kotlin.br.com.alura.bytebank.models.Endereco
+
 fun main() {
-//    testaTipoFuncaoReferencia()
-//    testaTipoFuncaoClasse()
-
-//    println(minhaFuncaoLambda(10, 15))
-//    println(minhaFuncaoAnonima(30, 45))
-
-    val calculaBonificacaoLambda: (salario: Double) -> Double = lambda@ {
-        if (it > 1000.0) return@lambda it + 50
-        it + 100.0
+    val testeFuncao: () -> Unit
+    Endereco().let {
+        it
     }
 
-    println(calculaBonificacaoLambda(1000.0))
+    "world".let(::testaReceberString)
 
-    val calculaBonificacaoAnonima: (salario: Double) -> Double = fun(salario): Double {
-        if (salario > 1000.0) return salario + 50
-        return salario + 100.0
-    }
-
-    println(calculaBonificacaoAnonima(1001.0))
+    1.let { it }
 }
 
+fun testaReceberString(str: String){ println("Hello $str") }
+
+fun teste(teste: Int, bloco: () -> Unit) {}
