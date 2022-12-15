@@ -4,7 +4,7 @@ import main.kotlin.br.com.alura.bytebank.models.SistemaInterno
 
 fun main() {
     Endereco(logradouro = "Av Voluntarios da Patria", numero = 5035, cidade = "São Paulo")
-        .apply {
+        .run {
             "$logradouro, $numero, $cidade".uppercase()
         }.let(::println)
 
