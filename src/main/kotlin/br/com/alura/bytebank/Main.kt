@@ -1,7 +1,6 @@
-import main.kotlin.br.com.alura.bytebank.models.Endereco
-import main.kotlin.br.com.alura.bytebank.tests.testaWith
+import main.kotlin.br.com.alura.bytebank.tests.testaRun
 
 fun main() {
-    testaWith()
+    testaRun()
 
 }
